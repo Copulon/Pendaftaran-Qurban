@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qurban Berkah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="layer-pendaftaran" class="page-container" style="display: flex;">
+        <div class="card-register">
+            <div class="icon-badge"><i class="fa-solid fa-cow"></i></div>
+            <h2>Pendaftaran</h2>
+            <h3>Peserta Qurban</h3>
+            <p>Lengkapi data diri untuk mendaftar sebagai peserta qurban.</p>
+            
+            <div class="form-wrapper">
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="in-nama" placeholder="Nama Peserta">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="in-phone" placeholder="Nomor Hp">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="in-alamat" placeholder="Alamat">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-cow"></i>
+                    <select id="in-hewan">
+                        <option value="Sapi">Sapi</option>
+                        <option value="Kambing">Kambing</option>
+                        <option value="Domba">Domba</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-users"></i>
+                    <input type="number" id="in-patungan" placeholder="Jumlah Hewan" value="1">
+                </div>
+                
+                <button type="button" id="btn-daftar" class="btn-submit">Daftar Sekarang</button>
+            </div>
+            <p class="form-footer-text">Data yang kamu masukkan akan kami jaga kerahasiaannya.</p>
+        </div>
+
+        <div class="quote-container">
+            <p>“Maka dirikanlah shalat karena Tuhanmu; dan berqurbanlah.”</p>
+            <span>(QS. Al-Kautsar: 2)</span>
+        </div>
+    </div>
+
+    <div id="layer-dashboard" class="page-container" style="display: none;">
+        <div class="dash-hero-section">
+            <div class="dashboard-wrapper">
+                <div class="dash-header">
+                    <div class="dash-logo">
+                        <i class="fa-solid fa-cow"></i>
+                        <div>Qurban<span style="color: #4ade80; font-weight:700; margin-left: 4px;">Berkah</span></div>
+                    </div>
+                    <div class="dash-profile">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100" class="user-avatar">
+                        <div class="user-info">
+                            <span>Halo,</span>
+                            <strong id="out-nama-header">Natoo</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-banner-text">
+                    <h1>Selamat Datang,</h1>
+                    <h2 id="out-banner-nama">Natoo</h2>
+                    <p>Terima kasih telah menjadi bagian dari kebaikan melalui ibadah qurban.</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <p class="stat-title">Total Peserta</p>
+                            <h4 id="out-total-peserta" style="font-size: 20px; font-weight: 700;">0 Orang</h4>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fa-solid fa-cow"></i></div>
+                        <div>
+                            <p class="stat-title">Total Hewan</p>
+                            <h4 id="out-total-hewan" style="font-size: 20px; font-weight: 700;">0 Ekor</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-content-section">
+            <div class="dashboard-wrapper">
+                <div class="section-title-bar">
+                    <h3>Daftar Peserta Qurban</h3>
+                    <button class="btn-add" onclick="bukaFormBaru()">+ Tambah Peserta</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>Hewan</th>
+                                <th>Jumlah</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                
+                <div class="info-section">
+                    <h3 style="margin-bottom: 8px;">Tentang Qurban</h3>
+                    <p style="font-size: 13px; color: #6b7280; line-height: 1.6; margin-bottom: 24px;">Qurban adalah bentuk ketaatan dan rasa syukur kita kepada Allah SWT. Dengan berqurban, kita berbagi kebahagiaan dengan sesama.</p>
+                    
+                    <div class="benefit-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-circle"><i class="fa-solid fa-heart"></i></div>
+                            <h5 style="font-size:12px; margin-bottom: 8px; color: green;">Ibadah Dicintai</h5>
+                            <p style="margin-bottom: 24px;">
+                              Qurban adalah sebuah ibadah yang sangat dicintai oleh Allah SWT.
+                            </p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-circle"><i class="fa-solid fa-users"></i></div>
+                            <h5 style="font-size:12px; margin-bottom: 8px; color: green">Berbagi Sesama</h5>
+                            <p margin-bottom: 24px;>
+                              Daging qurban dibagikan kepada mereka yang membutuhkan.
+                            </p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h5 style="font-size:12px; margin-bottom: 8px; color: green">Mendekatkan Diri</h5>
+                            <p margin-bottom: 24px;>
+                              Qurban adalah bentuk ketaatan dan pendekatan diri kepada Allah.
+                            </p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-circle"><i class="fa-solid fa-leaf"></i></div>
+                            <h5 style="font-size:12px;
+                    margin-bottom: 8px; color: green">Menebar Kebaikan</h5>
+                    <p margin-bottom: 24px;>
+                     Setiap qurban adalah benih kebaikan yang terus mengalir. 
+                    </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hadits-card">
+                    <p>"Tidak ada amalan yang dilakukan oleh anak Adam pada hari Nahr selain dari menyembelih hewan qurban." (HR. Tirmidzi)</p>
+                </div>
+                <p class="dash-footer">© 2026 Qurban Berkah. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/firestore.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

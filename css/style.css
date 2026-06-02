@@ -1,0 +1,366 @@
+/* ================= STYLE RESET & UTAMA ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                url('../img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #f4f6f4;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: none; /* Disembunyikan secara default, diatur via JS */
+}
+
+/* ================= LAYER 1: PENDAFTARAN ================= */
+#layer-pendaftaran {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.card-register {
+    background: white;
+    border-radius: 32px;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px 30px 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    text-align: center;
+    margin: auto 0;
+}
+
+.icon-badge {
+    width: 64px;
+    height: 64px;
+    background-color: #4c9e29;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.card-register h2 { font-size: 24px; font-weight: 700; color: #1f2937; margin-bottom: 2px; }
+.card-register h3 { font-size: 24px; font-weight: 700; color: #008435; margin-bottom: 8px; }
+.card-register p { font-size: 13px; color: #6b7280; margin-bottom: 28px; line-height: 1.5; }
+
+/* Input Box */
+.input-box {
+    position: relative;
+    margin-bottom: 16px;
+}
+.input-box i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+}
+.input-box input, .input-box select {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #1f2937;
+    outline: none;
+}
+.input-box .fa-chevron-down {
+    left: auto;
+    right: 16px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* Tombol */
+.btn-submit {
+    width: 100%;
+    background-color: #008435;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+.btn-submit:hover { background-color: #006b2b; }
+.form-footer-text { font-size: 11px; color: #9ca3af; margin-top: 16px; }
+
+.quote-container {
+    text-align: center;
+    color: #9ca3af;
+    max-width: 400px;
+    margin-top: 20px;
+}
+.quote-container p { font-size: 15px; font-style: italic; font-weight: 400; line-height: 1.6; }
+.quote-container span { display: block; font-size: 13px; font-weight: 600; margin-top: 8px; color: #e5e7eb; }
+
+
+/* ================= LAYER 2: DASHBOARD ================= */
+#layer-dashboard {
+    background-color: transparent;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* BAGIAN ATAS: BERSATU DENGAN BACKGROUND SAPI */
+.dash-hero-section {
+   background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                url('../img/db.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    width: 100%;
+    padding: 24px 16px 40px 16px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.dashboard-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.dash-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4ade80; /* Hijau neon kontras */
+    font-weight: 700;
+    font-size: 18px;
+}
+.dash-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.notif-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #e5e7eb;
+    cursor: pointer;
+}
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #4ade80;
+}
+.user-info { font-size: 13px; color: #ffffff; line-height: 1.2; }
+
+.dash-banner-text {
+    margin-bottom: 24px;
+}
+.dash-banner-text h1 { font-size: 22px; font-weight: 400; opacity: 0.9; }
+.dash-banner-text h2 { font-size: 32px; font-weight: 700; color: #4ade80; margin-bottom: 6px; }
+.dash-banner-text p { font-size: 13px; opacity: 0.8; }
+
+/* Grid Box Statistik Ber-efek Kaca Frosted Glass */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.stat-title { font-size: 12px; color: #e5e7eb; }
+.stat-box h4 { font-size: 18px; font-weight: 700; color: #ffffff; }
+
+/* BAGIAN BAWAH: DATA DAN HADITS */
+.dash-content-section {
+    padding: 32px 16px;
+    box-sizing: border-box;
+    background: #ffffff; /* Warna putih kartu */
+    border-radius: 20px; /* Sudut melengkung */
+    padding: 25px; /* Jarak dalam kartu */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+    margin-top: -24px; /* Menarik kartu ke atas biar menyatu dengan banner */
+    margin-bottom: 30px;
+    width: 94%;
+    margin-left: 10px;
+}
+
+.section-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.section-title-bar h3 { font-size: 16px; color: #1f2937; font-weight: 700; }
+.btn-add {
+    background-color: #008435;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: white;
+    margin-bottom: 24px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+th { background-color: #f9fafb; padding: 12px 16px; color: #6b7280; font-weight: 600; border-bottom: 1px solid #e5e7eb; }
+td { padding: 12px 16px; border-top: 1px solid #f3f4f6; color: #4b5563; }
+
+.btn-action {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 11px;
+}
+
+.info-section { margin-bottom: 24px; }
+.info-section p { font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px; }
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.benefit-item { 
+    text-align: center; 
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+.benefit-circle {
+    width: 44px;
+    height: 44px;
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 8px auto;
+    font-size: 16px;
+}
+
+.hadits-card {
+    background-color: #f0fdf4;
+    border: 1px solid #dcfce7;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+}
+.hadits-card p { font-size: 12px; color: #14532d; font-style: italic; line-height: 1.5; }
+.dash-footer { text-align: center; font-size: 11px; color: #9ca3af; border-top: 1px solid #f3f4f6; padding-top: 16px; }
+
+/* ================= MEDIA QUERY LAPTOP ================= */
+@media (min-width: 640px) {
+    .dash-hero-section { padding: 40px 24px 60px 24px; }
+    .dash-banner-text h1 { font-size: 28px; }
+    .dash-banner-text h2 { font-size: 38px; }
+    .dash-banner-text p { font-size: 14px; }
+    .stats-container { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-box { padding: 20px; gap: 16px; }
+    .stat-box h4 { font-size: 22px; }
+    .stat-icon { width: 48px; height: 48px; font-size: 20px; }
+    
+    .dash-content-section { padding: 40px 24px; }
+    .section-title-bar h3 { font-size: 18px; }
+    table { font-size: 14px; }
+    th, td { padding: 16px; }
+    .benefit-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+}
+
+/* Styling untuk kartu bagian bawah */
+.content-card {
+    background: #ffffff; /* Warna putih kartu */
+    border-radius: 20px; /* Sudut melengkung */
+    padding: 25px; /* Jarak dalam kartu */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+    margin-top: -50px; /* Menarik kartu ke atas biar menyatu dengan banner */
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Biar tabel tidak kepotong di dalam kartu */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
